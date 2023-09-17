@@ -1,0 +1,27 @@
+---
+title: "p8105_hw1_lw3061"
+author: "Lucia Wang"
+date: "2023-09-23"
+output: github_document
+---
+
+```{r, echo=FALSE, message=FALSE}
+library(moderndive)
+library(tidyverse)
+```
+
+# Problem 1: Using inline R and plotting with ggplot
+
+```{r}
+data("early_january_weather")
+```
+
+The variables in this dataset refer to the time and place of data collection (origin, year, month, day, hour, day_hour), and measures of weather (temp, dewp, humid, wind_dir, wind_speed, wind_gust, precip, pressure, visib).
+
+There are `r nrow(early_january_weather)` observations and `r ncol(early_january_weather)` variables in the dataset. 
+
+The mean temperature is `r round(mean(early_january_weather$temp), digits=2) ` degrees Fahrenheit.
+
+*continue here with rest of homework*
+
+# Problem 2
