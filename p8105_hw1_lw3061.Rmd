@@ -16,13 +16,13 @@ The following code was used to output the dataset:
 data("early_january_weather")
 ```
 
-The variables in this dataset refer to the time and place of data collection (origin, year, month, day, hour, day_hour) for various measures of weather (temp, dewp, humid, wind_dir, wind_speed, wind_gust, precip, pressure, visib).
+The variables in this dataset refer to the time and place of data collection (`origin`, `year`, `month`, `day`, `hour`, `day_hour`) for various measures of weather (`temp`, `dewp`, `humid`, `wind_dir`, `wind_speed`, `wind_gust`, `precip`, `pressure`, `visib`).
 
 There are *`r nrow(early_january_weather)` observations* and *`r ncol(early_january_weather)` variables* in the dataset. 
 
 The mean temperature is *`r round(mean(early_january_weather$temp), digits=2) ` degrees Fahrenheit*.
 
-This is a scatterplot of the variables *time_hour* and *temp*.
+This is a scatterplot of the variables `time_hour` and `temp`.
 ```{r}
 ggplot(early_january_weather, aes(x=time_hour, y=temp, color=humid)) + geom_point()
 ```
@@ -33,10 +33,10 @@ Some patterns in this plot:
 * each day there is a rise and fall in temperature corresponding to day or night
 * the range of temperatures is around 25-60 degrees Fahrenheit 
 
-```{r}
+This code exports the graph to my directory:
+```{r, message=FALSE}
 ggsave("hw1_scatterplot.pdf")
 ```
-
 
 # Problem 2: Understand variable types 
 A new dataframe is created below:
@@ -58,7 +58,8 @@ mean(pull(p2_df, factor_n))
 ```
 The mean is calculable for the numeric vector of the random sample and the logical vector indicating if those numbers are greater than 0.
 
-```{r}
+Now applying `as.numeric` to the vectors...
+```{r,eval=FALSE}
 as.numeric(pull(p2_df,log_n))
 as.numeric(pull(p2_df,char_n))
 as.numeric(pull(p2_df,factor_n))
