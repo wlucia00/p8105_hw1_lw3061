@@ -33,6 +33,10 @@ Some patterns in this plot:
 * each day there is a rise and fall in temperature corresponding to day or night
 * the range of temperatures is around 25-60 degrees Fahrenheit 
 
+```{r}
+ggsave("hw1_scatterplot.pdf")
+```
+
 
 # Problem 2: Understand variable types 
 A new dataframe is created below:
