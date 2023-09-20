@@ -58,4 +58,9 @@ mean(pull(p2_df, factor_n))
 ```
 The mean is calculable for the numeric vector of the random sample and the logical vector indicating if those numbers are greater than 0.
 
-
+```{r}
+as.numeric(pull(p2_df,log_n))
+as.numeric(pull(p2_df,char_n))
+as.numeric(pull(p2_df,factor_n))
+```
+When `as.numeric` is applied to the non-numeric vectors, the function works for all except the character vector. So the numeric function `mean()` only worked on vectors that were either numeric or logical (My factor vector happened to have numeric values in it and could be converted to numeric, but the mean couldn't be found since the values represented levels)
